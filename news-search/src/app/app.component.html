@@ -1,0 +1,175 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" role="navigation">
+          <a class="navbar-brand" href="#">  <i class="fas fa-newspaper"></i> </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLinkActive="active"[routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active"[routerLink]="['nytnews']">News</a>
+          </li>
+          <li class="nav-item">
+              <i [ngbTooltip]="help"  placement="bottom" class="nav-link fas fa-info-circle"></i>
+              <ng-template #help>
+                  <p>
+                    Filter down a search with either a `Search Query` or by selecting a category under `News Desk`. You can leave one or the other fields empty and then filter down by page for results. 
+                  </p>
+              </ng-template>
+            </li>
+        </ul>
+        <form (submit)="onSearch(search.value, news_desk.value, page.value)" class="form-inline mt-2 mt-md-0">
+                <div class="input-group">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="page">Page</label>
+                </div>
+                <select class="custom-select" #page name="page" id="page">
+                    <option selected value="0">1</option>
+                    <option value="1">2</option>
+                    <option value="2">3</option>
+                    <option  value="3">4</option>
+                    <option value="4">5</option>
+                </select>
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="news_desk">News Desk</label>
+                </div>
+                <select class="custom-select" #news_desk name="news_desk" id="news_desk">
+                    <option selected>Choose...</option>
+                    <option value="Politics">Politics</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Music">Music</option>
+                    <option  value="Movies">Movies</option>
+                    <option value="Popular">Popular</option>
+                    <option value="Adventure Sports" >Adventure Sports </option>
+                    <option value="Arts & Leisure" >Arts & Leisure </option>
+                    <option value="Arts" >Arts </option>
+                    <option value="Automobiles" >Automobiles </option>
+                    <option value="Blogs" >Blogs </option>
+                    <option value="Books" >Books </option>
+                    <option value="Booming" >Booming </option>
+                    <option value="Business Day" >Business Day </option>
+                    <option value="Business" >Business </option>
+                    <option value="Cars" >Cars </option>
+                    <option value="Circuits" >Circuits </option>
+                    <option value="Classifieds" >Classifieds </option>
+                    <option value="Connecticut" >Connecticut </option>
+                    <option value="Crosswords & Games" >Crosswords & Games </option>
+                    <option value="Culture" >Culture </option>
+                    <option value="DealBook" >DealBook </option>
+                    <option value="Dining" >Dining </option>
+                    <option value="Editorial" >Editorial </option>
+                    <option value="Education" >Education </option>
+                    <option value="Energy" >Energy </option>
+                    <option value="Entrepreneurs" >Entrepreneurs </option>
+                    <option value="Environment" >Environment </option>
+                    <option value="Escapes" >Escapes </option>
+                    <option value="Fashion & Style" >Fashion & Style </option>
+                    <option value="Fashion" >Fashion </option>
+                    <option value="Favorites" >Favorites </option>
+                    <option value="Financial" >Financial </option>
+                    <option value="Flight" >Flight </option>
+                    <option value="Food" >Food </option>
+                    <option value="Foreign" >Foreign </option>
+                    <option value="Generations" >Generations </option>
+                    <option value="Giving" >Giving </option>
+                    <option value="Global Home" >Global Home </option>
+                    <option value="Health & Fitness" >Health & Fitness </option>
+                    <option value="Health" >Health </option>
+                    <option value="Home & Garden" >Home & Garden </option>
+                    <option value="Home" >Home </option>
+                    <option value="Jobs" >Jobs </option>
+                    <option value="Key" >Key </option>
+                    <option value="Letters" >Letters </option>
+                    <option value="Long Island" >Long Island </option>
+                    <option value="Magazine" >Magazine </option>
+                    <option value="Market Place" >Market Place </option>
+                    <option value="Media" >Media </option>
+                    <option value="Men's Health" >Men's Health </option>
+                    <option value="Metro" >Metro </option>
+                    <option value="Metropolitan" >Metropolitan </option>
+                    <option value="Movies" >Movies </option>
+                    <option value="Museums" >Museums </option>
+                    <option value="National" >National </option>
+                    <option value="Nesting" >Nesting </option>
+                    <option value="Obits" >Obits </option>
+                    <option value="Obituaries" >Obituaries </option>
+                    <option value="Obituary" >Obituary </option>
+                    <option value="OpEd" >OpEd </option>
+                    <option value="Opinion" >Opinion </option>
+                    <option value="Outlook" >Outlook </option>
+                    <option value="Personal Investing" >Personal Investing </option>
+                    <option value="Personal Tech" >Personal Tech </option>
+                    <option value="Play" >Play </option>
+                    <option value="Politics" >Politics </option>
+                    <option value="Regionals" >Regionals </option>
+                    <option value="Retail" >Retail </option>
+                    <option value="Retirement" >Retirement </option>
+                    <option value="Science" >Science </option>
+                    <option value="Small Business" >Small Business </option>
+                    <option value="Society" >Society </option>
+                    <option value="Sports" >Sports </option>
+                    <option value="Style" >Style </option>
+                    <option value="Sunday Business" >Sunday Business </option>
+                    <option value="Sunday Review" >Sunday Review </option>
+                    <option value="Sunday Styles" >Sunday Styles </option>
+                    <option value="T Magazine" >T Magazine </option>
+                    <option value="T Style" >T Style </option>
+                    <option value="Technology" >Technology </option>
+                    <option value="Teens" >Teens </option>
+                    <option value="Television" >Television </option>
+                    <option value="The Arts" >The Arts </option>
+                    <option value="The Business of Green" >The Business of Green </option>
+                    <option value="The City Desk" >The City Desk </option>
+                    <option value="The City" >The City </option>
+                    <option value="The Marathon" >The Marathon </option>
+                    <option value="The Millennium" >The Millennium </option>
+                    <option value="The Natural World" >The Natural World </option>
+                    <option value="The Upshot" >The Upshot </option>
+                    <option value="The Weekend" >The Weekend </option>
+                    <option value="The Year in Pictures" >The Year in Pictures </option>
+                    <option value="Theater" >Theater </option>
+                    <option value="Then & Now" >Then & Now </option>
+                    <option value="Thursday Styles" >Thursday Styles </option>
+                    <option value="Times Topics" >Times Topics </option>
+                    <option value="Travel" >Travel </option>
+                    <option value="U.S." >U.S. </option>
+                    <option value="Universal" >Universal </option>
+                    <option value="Upshot" >Upshot </option>
+                    <option value="UrbanEye" >UrbanEye </option>
+                    <option value="Vacation" >Vacation </option>
+                    <option value="Washington" >Washington </option>
+                    <option value="Wealth" >Wealth </option>
+                    <option value="Weather" >Weather </option>
+                    <option value="Week in Review" >Week in Review </option>
+                    <option value="Week" >Week </option>
+                    <option value="Weekend" >Weekend </option>
+                    <option value="Westchester" >Westchester </option>
+                    <option value="Wireless Living" >Wireless Living </option>
+                    <option value="Women's Health" >Women's Health </option>
+                    <option value="Working" >Working </option>
+                    <option value="Workplace" >Workplace </option>
+                    <option value="World" >World </option>
+                    <option value="Your Money" >Your Money </option>
+                </select>
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="query">Query</label>
+                </div>
+                <input #search class="form-control mr-sm-1" id="query" value="{{_ds.formattedQuery}}" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-warning my-2 my-sm-0" value="{{_ds.formattedQuery}}" type="submit"><i class=" my-2 my-sm-0 fas fa-search"></i>
+                </button>
+          </div>
+        </form>
+      </div>
+    </nav>
+
+
+ 
+    <main id="backdrop" role="main"[@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+        <router-outlet #o="outlet"></router-outlet>
+    </main>
+

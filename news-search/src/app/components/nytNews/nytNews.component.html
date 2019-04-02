@@ -1,0 +1,54 @@
+
+
+<div class="hero hero-orange">
+    <div *ngIf="_ds.newsData  && _ds.newsData !== undefined && _ds.newsData !== null; else spinner" class="jumbotron">
+      <h2 class="heading heading-1">Just Looking For</h2>
+      <ng-template #searchedFor>   
+        <h2 class="heading heading-1">"{{ _ds.formattedForDisplayQuery }}"</h2>
+        <p class="lead search-text"> You Searched For "{{ _ds.formattedForDisplayQuery }}"</p>
+      </ng-template>
+      <div *ngIf="_ds.query === '' || _ds.query === undefined || _ds.query.length < 1; else searchedFor" class="lead"> 
+          <h2 class="heading heading-1">The Latest</h2>
+          <p class="lead search-text"> Search via search bar to find the latest news around the world</p>
+      </div>
+    </div>
+
+      <div *ngIf="_ds.newsData  && _ds.newsData !== undefined && _ds.newsData !== null; else spinner" class="jumbotron">
+          <span *ngIf="_ds.newsData.docs.length === 0">   
+              <h2 class="no-results">No Results Found</h2>
+          </span> 
+            <div class="row">
+              
+              <div *ngFor="let doc of _ds.newsData.docs; let idx = index"  class="card-group col-md-4" >
+                    <div class="align-baseline card bg-dark text-white article-image-container">
+                          <div class="overlay"></div>
+                          <img *ngIf="doc.multimedia.length > 0; else nullImage" class="card-img" src="https://nytimes.com/{{doc.multimedia[0].url}}" alt="Card image">
+                          <ng-template #nullImage>
+                              <img src="assets/nullImage.jpg" class="card-img gray-img" alt="Card image">
+                          </ng-template>
+                          <div class="card-img-overlay">
+                                <strong class="d-inline-block mb-2 text-success">
+                                  <span *ngIf="doc.news_desk !== 'None'">{{doc.news_desk}}</span> 
+                                    {{ doc.type_of_material}}  </strong>                                  
+                                <p class="card-text">{{  doc.pub_date | date : fullDate }}</p>
+                                <a id="hidden-link-styles" href="{{ doc.web_url }}">
+                                  <h5 class="card-title">{{ doc.headline.main }}</h5>
+                                  <p class="card-text">{{ doc.lead_paragraph | truncate : 200}}</p>
+                                  <a class="btn btn-secondary btn-sm" href="{{ doc.web_url }}">Continue Reading</a>
+                                </a>
+                          </div>
+                      </div>
+                  <br>
+              </div>          
+            </div>
+            <br>
+
+          <button class="btn btn-warning" routerLinkActive="active"[routerLink]="['']">Return Home</button>
+      </div>
+      <ng-template #spinner><img class="spinner" src ="assets/spinner.gif"> </ng-template>
+
+</div>
+
+
+
+  

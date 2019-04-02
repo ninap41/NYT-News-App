@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+router-outlet ~ * {
+    position: absolute;
+    margin-top: 55px;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+  }
+
+  body{
+    margin-top: 55px;
+    background-color: white;
+    // font-family: 'Courier New', Courier, monospace;
+  }
+
+  body, html {
+    height: 100%;
+
+  }
+
+.blinking{
+  animation:blinkingText 0.8s infinite;
+}
+@keyframes blinkingText{
+  0%{     color: #000;    }
+  49%{    color: transparent; }
+  50%{    color: transparent; }
+  99%{    color:transparent;  }
+  100%{   color: #000;    }
+}
+
+// .medium-component {
+//   width: 400px;
+//   height:100px;
+//   // border: 2px solid green;
+
+// }
