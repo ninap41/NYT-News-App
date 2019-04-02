@@ -20,11 +20,12 @@ Potential Development Ideas:
 
 - Vice news... Washington Post
 
+
 - Sync up to Firebase (or maybe use MongoDB) to create `Users` that can pin articles as `Forum` topics. From there, other users can share `comments`  on Forum Topics
 
 - Create User Dashboard, where the user can filter down their favorite news sources by   `news_desk`  type and view curated content when logging in.
 
-
+![](dumbnews.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
