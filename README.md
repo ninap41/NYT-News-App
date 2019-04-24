@@ -1,12 +1,16 @@
 # News Search Api
 
+Please use node v9.5.0 (npm v6.4.1)** 
+Have not yet updated webpack to accomodate v10.0.0+
+
 A news app  created with Typescript Classes, Angular, Bootstrap, Font-Awesome, and SCSS calling the NYT API (.subscribe(), .map())  to filter down JSON data with article information and display them asynchronously based on three of parameters in the URL. Uses script formatting functions and Services for Data as well as Jquery.
 
-`query`
-`news_desk`
-`page number`
+`https://api.nytimes.com/svc/search/v2/articlesearch.json?&q=${query}&page=${page number}&fq=news_desk:(${news_desk})&api-key=${api-key}`
+
 
 ### Url Example
+
+![](dumbnews.png)
 
 `https://api.nytimes.com/svc/search/v2/articlesearch.json?&q=Dumb+News&page=0&fq=news_desk:("Politics")&api-key=V9AatSDViVuWKGhb35hv6EBQIKphCn7J`
 
@@ -18,14 +22,12 @@ Contains a Query class with a NYT subclass to create dynamic calls potentially d
 
 Potential Development Ideas:
 
-- Vice news... Washington Post
-
+- newspi instead for all sources, but there's a limit on reqiests
 
 - Sync up to Firebase (or maybe use MongoDB) to create `Users` that can pin articles as `Forum` topics. From there, other users can share `comments`  on Forum Topics
 
 - Create User Dashboard, where the user can filter down their favorite news sources by   `news_desk`  type and view curated content when logging in.
 
-![](dumbnews.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
