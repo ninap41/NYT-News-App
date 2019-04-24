@@ -23,6 +23,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { DateFormatterPipe } from './date-formatter.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NTYsearchComponent } from './components/ntysearch/ntysearch.component';
+import { NYTshowArticleComponent } from './nytshow-article/nytshow-article.component';
 
 
 
@@ -35,6 +36,7 @@ import { NTYsearchComponent } from './components/ntysearch/ntysearch.component';
     TruncatePipe,
     DateFormatterPipe,
     NTYsearchComponent,
+    NYTshowArticleComponent,
   ],
   imports: [
     HttpModule,

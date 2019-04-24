@@ -32,12 +32,4 @@ export class NytNewsComponent implements OnInit {
   ngOnInit() {
     this._ds.getAllNews(this._ds.query, this._ds.news_desk, this._ds.page);
   }
-
-  stateHandler(stateString) {
-  }
-
-
-  onEnter(box) {
-
-  }
 }

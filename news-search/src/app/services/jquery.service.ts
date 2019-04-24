@@ -36,6 +36,7 @@ showVal(id, val) {
 }
 // CONTEXT arg to pass a dictionary of values, then traverse the nodes using a JSON tree traversal function
 // to remove/add listeners. will be its own service OR just use Lodash >.<
+// assume this will no longer neccesary if I use Angular Materials to make the application more dynamic
 addEventListeners(context) {
   // call this in constructor / or on init for components.
 }
