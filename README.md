@@ -8,15 +8,12 @@ A news app  created with Typescript Classes, Angular, Bootstrap, Font-Awesome, a
 `https://api.nytimes.com/svc/search/v2/articlesearch.json?&q=${query}&page=${page number}&fq=news_desk:(${news_desk})&api-key=${api-key}`
 
 
+
 ### Url Example
 
-![](dumbnews.png)
+![](buttigieg.png)
 
-`https://api.nytimes.com/svc/search/v2/articlesearch.json?&q=Dumb+News&page=0&fq=news_desk:("Politics")&api-key=V9AatSDViVuWKGhb35hv6EBQIKphCn7J`
-
-response of first article main title:
-
-`main: "President Dumb and Dumber"`
+`https://api.nytimes.com/svc/search/v2/articlesearch.json?&q=buttigieg&page=0&fq=news_desk:("Politics")&api-key=V9AatSDViVuWKGhb35hv6EBQIKphCn7J`
 
 Contains a Query class with a NYT subclass to create dynamic calls potentially different API news services
 
