@@ -7,8 +7,6 @@ A news app  created with Typescript Classes, Angular, Bootstrap, Font-Awesome, a
 
 `https://api.nytimes.com/svc/search/v2/articlesearch.json?&q=${query}&page=${page number}&fq=news_desk:(${news_desk})&api-key=${api-key}`
 
-
-
 ### Url Example
 
 ![](buttigieg.png)
@@ -25,6 +23,8 @@ Potential Development Ideas:
 
 - Create User Dashboard, where the user can filter down their favorite news sources by   `news_desk`  type and view curated content when logging in.
 
+![](home_page2.png)
+![](home_page1.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 

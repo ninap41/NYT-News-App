@@ -1,22 +1,33 @@
-<div class="hero hero-blue ">
+<div class="hero hero-blue">
+            <img 
+            *ngIf="this._ds.singleArticle.multimedia[14]" 
+            alt="{{this._ds.singleArticle.multimedia[14].snippet}}"
+            src="https://nytimes.com/{{this._ds.singleArticle.multimedia[14].url}}"
+            class="jumbo" 
+            ><!-- class should be equal to extra large -->
+            <div class="container" ></div>
       <div class="container">
-            <h1 class="r heading heading-1">Find News </h1>
-            <h1 class="r heading heading-1">Search Anything</h1><br>
+            <br>
+            <h1 class="r heading heading-1">Find News. </h1>
+            <h1 class="r heading heading-1">Search Anything.</h1><br>
+            <hr>
+            <br>
+            <br>
             <div class="row">
                         <div class="col-sm-6">
                         <h2>About</h2>
-                        <p> About: Basic Search platform using New York Times Api. Using Bootstrap 4, Angular Materials, Angular Routing Animations, NYTapi, Typescript, and Typescript classes to create dynamic queries for your news needs. ^_^ </p>
+                        <p> Basic Search platform using New York Times Api. Using Bootstrap 4, Angular Materials, Angular Routing Animations, NYTapi, Typescript, and Typescript classes to create dynamic queries for your news needs. ^_^ </p>
                   </div>
                   <div class="col-sm-6">
                         <h2>How it works</h2>
-                        <p>Select from the dropdown a news outlet (the only one available is NYT  ¯\_(ツ)_/¯). The search bar should appear. Select a Page and type a key term/query. "News Desk" is like a topics category, but is not neccesary if you want general articles from al categories from your query.  </p>
+                        <p>Select from the dropdown a news outlet (the only one available is NYT  ¯\_(ツ)_/¯). The search bar should appear. Select a Page and type a key term/query. "News Desk" are topics and not neccesary to get results. If you want a response that's a pool from all News_Desk categories, just search a query.  </p>
                   </div>
             </div>
             <div class="row">
                   <div class="col-sm-12">
                         <h2>Sample Article Data</h2>
-                        <p>Displayed right is sample article Data from NYT api. The article response is limited. But you can console.log(data) </p>
-                        <pre>{{this._ds.singleArticle| json | slice:0:2500}}...</pre>
+                        <p>Sample article Data from NYT api, from the response.docs Array.  </p>
+                        <pre>{{this._ds.singleArticle | json }}...</pre>
                   </div>   
             </div>
       </div>

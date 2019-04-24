@@ -83,5 +83,5 @@ public getPopularArticle(querypassed, news_deskVal, pageVal) {
   });
   return text;
  }
- 
+
 }

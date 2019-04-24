@@ -1,5 +1,6 @@
 .hero {
     position: relative;
+    font-weight: bold;
     height:auto;
     min-height: 100%;
     bottom: 0;
@@ -11,17 +12,40 @@
     -o-background-size: cover;
     background-size: cover;
     width: 100%;
-    color: white;
-    padding: 1em;
+    color: rgb(58, 58, 58);
     
-/* Permalinkrgb(170, 88, 0)nd share this gradient: http://colorzilla.com/gradient-editor/#ffb76b+0,ffa73d+26,ff7c00+65,ff7f04+84 */
-background: rgb(255,183,107); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(255,183,107,1) 0%, rgba(255,167,61,1) 26%, rgba(255,124,0,1) 65%, rgba(255,127,4,1) 84%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(255,183,107,1) 0%,rgba(255,167,61,1) 26%,rgba(255,124,0,1) 65%,rgba(255,127,4,1) 84%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(255,183,107,1) 0%,rgba(255,167,61,1) 26%,rgba(255,124,0,1) 65%,rgba(255,127,4,1) 84%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=0 ); /* IE6-9 */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffa84c+0,ff7b0d+100;Orange+3D */
+background: #ffa84c; /* Old browsers */
+background: -moz-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ffa84c 0%,#ff7b0d 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ffa84c 0%,#ff7b0d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=0 ); /* IE6-9 */
 }
+
 .heading-1 {
+    mix-blend-mode: multiply;
     font-size: 8rem;
     margin-bottom: 0px;
+
+}
+h2 {
+    font-weight: 700;
+}
+
+h2::after {
+    content: "\A";
+    white-space: pre;
+
+}
+
+.jumbo {
+    position: fixed;
+    opacity: .6;
+    width: 100%;
+    margin: -30px auto;
+    padding: 0;
+    mix-blend-mode: screen;
+    background: repeat;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
 }
