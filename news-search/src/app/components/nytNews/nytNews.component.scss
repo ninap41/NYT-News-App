@@ -125,3 +125,15 @@ body, html{
 }
 
 
+
+.jumbo {
+  position: fixed;
+  opacity: .6;
+  width: 100%;
+  margin: -30px auto;
+  padding: 0;
+  mix-blend-mode: screen;
+  background: repeat;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}

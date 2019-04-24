@@ -27,10 +27,27 @@ toggleShow(string) {
   });
 }
 
+fadeOut(string) {
+  if (string !== null || string !== undefined ) {
+    $(document).ready(function() {
+        $(`${string}`).fadeOut(1000);
+    });
+  }
+}
+
+fadeIn(string) {
+  if (string !== null || string !== undefined ) {
+  $(document).ready(function() {
+      $(`${string}`).fadeIn(1000);
+  });
+  }
+}
+
 showVal(id, val) {
   $.when( $(id).fadeToggle()).done(function ( ) {
     $(id).html(val).fadeIn();
 });
+
 
 
 }

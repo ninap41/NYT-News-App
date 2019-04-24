@@ -62,13 +62,17 @@ public queryObjectNYC = new NytQuery('', '');
         });
 }
 
-public getPopularArticle(querypassed, news_deskVal, pageVal) {
+public getPopularArticle(querypassed, news_deskVal, pageVal, string_for_elements) {
   const serverWithApiUrl = this.queryObjectNYC.createQuery(querypassed, news_deskVal,  pageVal);
+  this._jq.fadeOut(string_for_elements);
     return this.http.get(serverWithApiUrl)
       .subscribe((data) => {
         const res = data.json().response.docs;
         this.singleArticle = res[Math.floor(Math.random() * res.length)];
-      });
+      },
+      (err) => console.error(err),
+      () => this._jq.fadeIn(string_for_elements),
+      );
 }
 
  public formatQuery(query) {

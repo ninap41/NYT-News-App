@@ -6,6 +6,8 @@ import { map } from 'rxjs/operators';
 import { trigger, animate, style, group, query, transition, state, stagger, keyframes } from '@angular/animations';
 import { fadeAnimation} from '../../animate';
 import { DataService } from '../../services/data.service';
+import { JqueryService } from '../../services/jquery.service';
+
 import { $$ } from 'protractor';
 
 
@@ -18,6 +20,8 @@ export class HomepageComponent implements OnInit {
   public popular = {};
   constructor(
     private _ds: DataService,
+    private _jq: JqueryService,
+
   ) { }
 
   ngOnInit() {
@@ -25,10 +29,6 @@ export class HomepageComponent implements OnInit {
   }
 
   updatePage() {
-    this._ds.getPopularArticle('', 'Politics', '0');
+    this._ds.getPopularArticle('', 'Politics', '0', '.changeArt');
   }
-  update(e) {
-    console.log(e);
-  }
-
 }

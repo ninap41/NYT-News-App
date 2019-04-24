@@ -3,14 +3,14 @@
             *ngIf="this._ds.singleArticle.multimedia[14]" 
             alt="{{this._ds.singleArticle.multimedia[14].snippet}}"
             src="https://nytimes.com/{{this._ds.singleArticle.multimedia[14].url}}"
-            class="jumbo" 
+            class="jumbo changeArt" 
 
             ><!-- class should be equal to extra large -->
             <div class="container" ></div>
       <div class="container">
             <br>
             <h1 class="r heading heading-1">Find News. </h1>
-            <div class="r heading heading-1">Search Anything <span class="heading-1 blinking">|</span> </div><br>
+            <div class="r heading heading-1">Search Anything < <!-- Too much cpu usage for this add later. Keep "<" for now. <span class="heading-1 blinking">|</span>--></div><br> 
             <hr>
             <br>
             <br>
@@ -26,8 +26,9 @@
                   <div class="col-sm-4">
                         <h2>Dynamic UI</h2>
                         <p>Background which updates based on data calls. Update the Article on this page. </p>
-                        <p><button class="btn -btn-warning" (click)="updatePage()">Update</button> </p>
-                        <p             
+                        <p><button class="btn -btn-warning" (click)="updatePage('fade')">Update</button> </p>
+                        <p   
+                        class="changeArt"          
                         *ngIf="this._ds.singleArticle.web_url"
                         > URL? : <b >{{this._ds.singleArticle.web_url}}</b></p>
 
@@ -37,9 +38,7 @@
                   <div class="col-sm-12">
                         <h2>Sample Article Data</h2>
                         <p>Sample article Data from NYT api, from the response.docs Array.  </p>
-                        <pre 
-
-                        >{{this._ds.singleArticle | json }}...</pre>
+                        <pre class="changeArt" >{{this._ds.singleArticle | json }}...</pre>
                   </div>   
             </div>
       </div>
