@@ -5,9 +5,8 @@ Have not yet updated webpack to accomodate v10.0.0+
 
 A news app  created with Typescript Classes, Angular, Bootstrap, Font-Awesome, and SCSS calling the NYT API (.subscribe(), .map())  to filter down JSON data with article information and display them asynchronously based on three of parameters in the URL. Uses script formatting functions and Services for Data as well as Jquery.
 
-`query`
-`news_desk`
-`page number`
+https://api.nytimes.com/svc/search/v2/articlesearch.json?&q=`${query}`&page=`${page number}`&fq=news_desk:("`${news_desk}`")&api-key=`${api-key}`
+
 
 ### Url Example
 
