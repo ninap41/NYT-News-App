@@ -23,7 +23,7 @@ export class JqueryService {
 
 toggleShow(string) {
   $(document).ready(function() {
-      $(`.${string}`).fadeToggle();
+      $(`${string}`).toggle();
   });
 }
 

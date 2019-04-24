@@ -22,14 +22,6 @@ declare var $: any;
   ]
 })
 export class NytNewsComponent implements OnInit {
-char;
-data;
-items;
-imgtest;
-values;
-private actionUrl: string;
-
-
   constructor(
     private _jq: JqueryService,
     private _ds: DataService,

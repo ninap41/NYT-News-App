@@ -25,10 +25,11 @@ query;
 news_desk;
 page;
 formattedForDisplayQuery;
-
+httptest;
 public serverWithApiUrl;
 private actionUrl: string;
 public queryObjectNYC = new NytQuery('', '');
+
 
   constructor(
     private http: Http,
@@ -58,6 +59,10 @@ public queryObjectNYC = new NytQuery('', '');
           console.log(data.json());
           console.log(this.newsData);
         });
+
+        this.httptest = this.http.get(this.serverWithApiUrl)
+            .map((res: any) => res.results);
+
 }
 
  public formatQuery(query) {

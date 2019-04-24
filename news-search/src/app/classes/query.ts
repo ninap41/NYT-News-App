@@ -1,4 +1,5 @@
 
+
 export class Query {
     baseURL: string;
     apiKey: string;
@@ -8,7 +9,6 @@ export class Query {
         this.apiKey = _apiKey;
     }
 }
-
 
 export class NytQuery extends Query {
     constructor(

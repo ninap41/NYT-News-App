@@ -22,6 +22,8 @@ import * as $ from 'jquery';
 import { TruncatePipe } from './truncate.pipe';
 import { DateFormatterPipe } from './date-formatter.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NTYsearchComponent } from './components/ntysearch/ntysearch.component';
+
 
 
 
@@ -32,6 +34,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HomepageComponent,
     TruncatePipe,
     DateFormatterPipe,
+    NTYsearchComponent,
   ],
   imports: [
     HttpModule,
