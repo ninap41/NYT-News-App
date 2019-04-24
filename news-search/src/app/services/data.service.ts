@@ -21,7 +21,7 @@ import { Query, NytQuery } from '../classes/query';
 @Injectable()
 export class DataService {
 newsData: Observable<any>;
-singleArticle;
+singleArticle: Observable<any>;
 query;
 news_desk;
 page;

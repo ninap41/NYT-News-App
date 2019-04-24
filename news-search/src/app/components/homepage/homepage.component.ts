@@ -19,7 +19,10 @@ export class HomepageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this._ds.getPopularArticle('', 'Politics', '0');
+    this.updatePage();
   }
 
+  updatePage() {
+    this._ds.getPopularArticle('', 'Politics', '0');
+  }
 }

@@ -14,13 +14,20 @@
             <br>
             <br>
             <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                         <h2>About</h2>
                         <p> Basic Search platform using New York Times Api. Using Bootstrap 4, Angular Materials, Angular Routing Animations, NYTapi, Typescript, and Typescript classes to create dynamic queries for your news needs. ^_^ </p>
                   </div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-4">
                         <h2>How it works</h2>
                         <p>Select from the dropdown a news outlet (the only one available is NYT  ¯\_(ツ)_/¯). The search bar should appear. Select a Page and type a key term/query. "News Desk" are topics and not neccesary to get results. If you want a response that's a pool from all News_Desk categories, just search a query.  </p>
+                  </div>
+                  <div class="col-sm-4">
+                        <h2>Dynamic UI</h2>
+                        <p>Background which updates based on data calls. Update the Article on this page. </p>
+                        <p><button class="btn -btn-warning" (click)="updatePage()">Update</button> </p>
+                        <p *ngIf="this._ds.singleArticle.web_url"> URL? : <b >{{this._ds.singleArticle.web_url}}</b></p>
+
                   </div>
             </div>
             <div class="row">

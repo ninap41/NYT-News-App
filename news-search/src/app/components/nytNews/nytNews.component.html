@@ -1,11 +1,11 @@
 
 
 <div class="hero hero-orange">
-    <div *ngIf="_ds.newsData  && _ds.newsData !== undefined && _ds.newsData !== null; else spinner" class="jumbotron">
-      <h2 class="heading heading-1">Just Looking For</h2>
+    <div *ngIf="_ds.newsData  && _ds.newsData !== undefined && _ds.newsData !== null; else spinner" >
+      <h2 class="lead  heading-1">Just Looking For</h2>
       <ng-template #searchedFor>   
-        <h2 class="heading heading-1">"{{ _ds.formattedForDisplayQuery }}"</h2>
-        <p class="lead search-text"> You Searched For "{{ _ds.formattedForDisplayQuery }}"</p>
+        <h2 class="lead  heading-1">"{{ _ds.formattedForDisplayQuery }}"</h2>
+        <h2 class="lead search-text"> You Searched For "{{ _ds.formattedForDisplayQuery }}"</h2>
       </ng-template>
       <div *ngIf="_ds.query === '' || _ds.query === undefined || _ds.query.length < 1; else searchedFor" class="lead"> 
           <h2 class="heading heading-1">The Latest</h2>
@@ -18,7 +18,6 @@
               <h2 class="no-results">No Results Found</h2>
           </span> 
             <div class="row">
-              
               <div *ngFor="let doc of _ds.newsData.docs; let idx = index"  class="card-group col-md-4" >
                     <div class="align-baseline card bg-dark text-white article-image-container">
                           <div class="overlay"></div>

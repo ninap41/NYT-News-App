@@ -7,7 +7,7 @@ export class JqueryService {
   }
 
 
- blinky(name) {
+ blinky(name) { // consider removing ....
   $('.prompt').html(`[!${name}] $`);
   // Update the clock every second
   setInterval(function() {

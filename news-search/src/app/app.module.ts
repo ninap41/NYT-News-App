@@ -12,20 +12,15 @@ import { AppRoutingModule } from './app-routing.module';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // npm install --save @ng-bootstrap/ng-bootstrap
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Materials
-
 // services
 import { DataService } from './services/data.service';
-
 import { JqueryService } from './services/jquery.service';
-
 import * as $ from 'jquery';
 import { TruncatePipe } from './pipes/truncate.pipe';
-import { DateFormatterPipe } from './date-formatter.pipe';
+import { DateFormatterPipe } from './pipes/date-formatter.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NTYsearchComponent } from './components/ntysearch/ntysearch.component';
 import { NYTshowArticleComponent } from './nytshow-article/nytshow-article.component';
-
-
 
 
 @NgModule({
