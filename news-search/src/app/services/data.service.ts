@@ -21,6 +21,7 @@ import { Query, NytQuery } from '../classes/query';
 @Injectable()
 export class DataService {
 newsData: Observable<any>;
+singleArticle;
 query;
 news_desk;
 page;
@@ -59,10 +60,15 @@ public queryObjectNYC = new NytQuery('', '');
           console.log(data.json());
           console.log(this.newsData);
         });
+}
 
-        this.httptest = this.http.get(this.serverWithApiUrl)
-            .map((res: any) => res.results);
-
+public getPopularArticle(querypassed, news_deskVal, pageVal) {
+  const serverWithApiUrl = this.queryObjectNYC.createQuery(querypassed, news_deskVal,  pageVal);
+    return this.http.get(serverWithApiUrl)
+      .subscribe((data) => {
+        const res = data.json().response.docs;
+        this.singleArticle = res[Math.floor(Math.random() * res.length)];
+      });
 }
 
  public formatQuery(query) {
@@ -77,21 +83,5 @@ public queryObjectNYC = new NytQuery('', '');
   });
   return text;
  }
-
-// public dataValidator(before, after) {
-//     if (before !== after) {
-//       return false;
-//     } else {
-//       return true;
-//     }
-// }
-
-  updateDataOnUserCreate() {
-
-  }
-
-  updateData() {
-}
-
-
+ 
 }

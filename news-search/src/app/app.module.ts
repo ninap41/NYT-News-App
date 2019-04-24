@@ -19,7 +19,7 @@ import { DataService } from './services/data.service';
 import { JqueryService } from './services/jquery.service';
 
 import * as $ from 'jquery';
-import { TruncatePipe } from './truncate.pipe';
+import { TruncatePipe } from './pipes/truncate.pipe';
 import { DateFormatterPipe } from './date-formatter.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NTYsearchComponent } from './components/ntysearch/ntysearch.component';

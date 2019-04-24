@@ -1,13 +1,23 @@
 <div class="hero hero-blue ">
-
-
-      <h1 class="r heading heading-1">Find News</h1>
-
-
-      <h1 class="r heading heading-1">Search Anything</h1>
-
-
-      <p class=" r lead"> Basic Search platform using New York Times Api</p>
-  
-   
+      <div class="container">
+            <h1 class="r heading heading-1">Find News </h1>
+            <h1 class="r heading heading-1">Search Anything</h1><br>
+            <div class="row">
+                        <div class="col-sm-6">
+                        <h2>About</h2>
+                        <p> About: Basic Search platform using New York Times Api. Using Bootstrap 4, Angular Materials, Angular Routing Animations, NYTapi, Typescript, and Typescript classes to create dynamic queries for your news needs. ^_^ </p>
+                  </div>
+                  <div class="col-sm-6">
+                        <h2>How it works</h2>
+                        <p>Select from the dropdown a news outlet (the only one available is NYT  ¯\_(ツ)_/¯). The search bar should appear. Select a Page and type a key term/query. "News Desk" is like a topics category, but is not neccesary if you want general articles from al categories from your query.  </p>
+                  </div>
+            </div>
+            <div class="row">
+                  <div class="col-sm-12">
+                        <h2>Sample Article Data</h2>
+                        <p>Displayed right is sample article Data from NYT api. The article response is limited. But you can console.log(data) </p>
+                        <pre>{{this._ds.singleArticle| json | slice:0:2500}}...</pre>
+                  </div>   
+            </div>
+      </div>
 </div>

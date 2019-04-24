@@ -3,6 +3,8 @@ import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { DataService } from '../../services/data.service';
+import { $$ } from 'protractor';
 
 
 @Component({
@@ -11,14 +13,13 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  private actionUrl: string;
-
+  public popular = {};
   constructor(
-
+    private _ds: DataService,
   ) { }
 
   ngOnInit() {
-
+    this._ds.getPopularArticle('', 'Politics', '0');
   }
 
 }
