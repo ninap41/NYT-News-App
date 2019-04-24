@@ -1,6 +1,5 @@
 # News Search Api
 
-
 Please use node v9.5.0 (npm v6.4.1)** 
 Have not yet updated webpack to accomodate v10.0.0+
 
