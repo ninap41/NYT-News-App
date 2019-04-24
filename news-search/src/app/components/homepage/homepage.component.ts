@@ -3,6 +3,8 @@ import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { trigger, animate, style, group, query, transition, state, stagger, keyframes } from '@angular/animations';
+import { fadeAnimation} from '../../animate';
 import { DataService } from '../../services/data.service';
 import { $$ } from 'protractor';
 
@@ -25,4 +27,8 @@ export class HomepageComponent implements OnInit {
   updatePage() {
     this._ds.getPopularArticle('', 'Politics', '0');
   }
+  update(e) {
+    console.log(e);
+  }
+
 }

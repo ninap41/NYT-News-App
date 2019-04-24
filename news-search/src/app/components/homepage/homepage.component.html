@@ -4,12 +4,13 @@
             alt="{{this._ds.singleArticle.multimedia[14].snippet}}"
             src="https://nytimes.com/{{this._ds.singleArticle.multimedia[14].url}}"
             class="jumbo" 
+
             ><!-- class should be equal to extra large -->
             <div class="container" ></div>
       <div class="container">
             <br>
             <h1 class="r heading heading-1">Find News. </h1>
-            <h1 class="r heading heading-1">Search Anything.</h1><br>
+            <div class="r heading heading-1">Search Anything <span class="heading-1 blinking">|</span> </div><br>
             <hr>
             <br>
             <br>
@@ -26,7 +27,9 @@
                         <h2>Dynamic UI</h2>
                         <p>Background which updates based on data calls. Update the Article on this page. </p>
                         <p><button class="btn -btn-warning" (click)="updatePage()">Update</button> </p>
-                        <p *ngIf="this._ds.singleArticle.web_url"> URL? : <b >{{this._ds.singleArticle.web_url}}</b></p>
+                        <p             
+                        *ngIf="this._ds.singleArticle.web_url"
+                        > URL? : <b >{{this._ds.singleArticle.web_url}}</b></p>
 
                   </div>
             </div>
@@ -34,7 +37,9 @@
                   <div class="col-sm-12">
                         <h2>Sample Article Data</h2>
                         <p>Sample article Data from NYT api, from the response.docs Array.  </p>
-                        <pre>{{this._ds.singleArticle | json }}...</pre>
+                        <pre 
+
+                        >{{this._ds.singleArticle | json }}...</pre>
                   </div>   
             </div>
       </div>
