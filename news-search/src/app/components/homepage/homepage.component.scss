@@ -10,7 +10,6 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
     width: 100%;
     color: rgb(58, 58, 58);
     background: rgba(241,231,103,1);
@@ -23,12 +22,31 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=1 );
 }
 
+.hero-blue {
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .jumbo {
+        position: fixed;
+        background-position: center center;
+        opacity: .6;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0;
+        mix-blend-mode: screen;
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+}
+
 .heading-1 {
     mix-blend-mode: multiply;
     font-size: 8rem;
     margin-bottom: 0px;
 
 }
+
 h2 {
     font-weight: 700;
 }
@@ -42,11 +60,97 @@ h2::after {
 .jumbo {
     position: fixed;
     opacity: .6;
-    width: 100%;
     margin: -30px auto;
     padding: 0;
     mix-blend-mode: screen;
-    background: repeat;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 }
+
+.wrap {
+    word-wrap: break-all;
+  }
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+    .jumbo {
+        width: 100%;
+        background-position: center center;
+
+    }
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    
+    .jumbo {
+        width: 100%;
+        background-position: center center;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    .jumbo {
+        width: 100%;
+        background-position: center center;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    .jumbo {
+        width: 100%;
+        background-position: center center;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    .jumbo {
+        height: 100%;
+        background-position: center center;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    
+    .jumbo {
+        height: 100%;
+        background-position: center center;
+    }
+    
+  }

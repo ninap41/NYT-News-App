@@ -25,10 +25,10 @@ export class HomepageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.updatePage();
+    this.updatePage(null);
   }
 
-  updatePage() {
-    this._ds.getPopularArticle('', 'Politics', '0', '.changeArt');
+  updatePage(changeArt) { // arg is for updating classes fadeIn fadeOut
+    this._ds.getArticle('', 'Politics', '0', '.changeArt', true);
   }
 }

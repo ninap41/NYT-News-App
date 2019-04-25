@@ -1,6 +1,7 @@
 import { Http, Response} from '@angular/http';
 import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map } from 'rxjs/operators'; import 'rxjs/operators/map';
+
 import { Injectable } from '@angular/core';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
@@ -21,16 +22,16 @@ import { Query, NytQuery } from '../classes/query';
 @Injectable()
 export class DataService {
 newsData: Observable<any>;
-singleArticle: Observable<any>;
+randArticle: Observable<any>;
+singleArticle:  Observable<any>;
 query;
 news_desk;
 page;
 formattedForDisplayQuery;
 httptest;
-public serverWithApiUrl;
-private actionUrl: string;
-public queryObjectNYC = new NytQuery('', '');
 
+public serverWithApiUrl;
+public queryObjectNYC = new NytQuery('', '');
 
   constructor(
     private http: Http,
@@ -52,7 +53,7 @@ public queryObjectNYC = new NytQuery('', '');
     this.page = pageVal;
     console.log(this.query);
     this.serverWithApiUrl = this.queryObjectNYC.createQuery(this.query, news_deskVal, this.page);
-    console.log(this.query);
+    console.log(this.serverWithApiUrl);
       setTimeout(() => this._router.navigateByUrl('/nytnews'), 2000 );
       return this.http.get(this.serverWithApiUrl)
         .subscribe((data: Response) => {
@@ -62,17 +63,30 @@ public queryObjectNYC = new NytQuery('', '');
         });
 }
 
-public getPopularArticle(querypassed, news_deskVal, pageVal, string_for_elements) {
-  const serverWithApiUrl = this.queryObjectNYC.createQuery(querypassed, news_deskVal,  pageVal);
-  this._jq.fadeOut(string_for_elements);
-    return this.http.get(serverWithApiUrl)
-      .subscribe((data) => {
-        const res = data.json().response.docs;
-        this.singleArticle = res[Math.floor(Math.random() * res.length)];
-      },
-      (err) => console.error(err),
-      () => this._jq.fadeIn(string_for_elements),
-      );
+public getArticle(querypassed, news_deskVal, pageVal, string_for_elements, random: boolean) {
+  const _this = this;
+  const serverWithApiUrl = this.queryObjectNYC.createQuery(querypassed, news_deskVal, pageVal);
+    _this._jq.fadeOut(string_for_elements);
+    return  _this.http.get(serverWithApiUrl)
+        .subscribe((data: Response) => {
+          const res = data.json().response.docs;
+          _this.randArticle = res[Math.floor(Math.random() * res.length)];
+        },
+          (err) => console.error(err),
+          () => ( _this._jq.fadeOut(string_for_elements),
+                  _this._jq.fadeIn(string_for_elements)
+          )
+        );
+
+}
+
+showArticlePage(obj) { // object, and random boolean
+  //single query maker 
+  // https://api.nytimes.com/svc/search/v2/articlesearch.json?&_id=5cc0f43a49f0eacbf1f87447&api-key=V9AatSDViVuWKGhb35hv6EBQIKphCn7J
+  console.log(obj);
+  this.singleArticle = obj;
+  setTimeout(() => this._router.navigateByUrl('/showArticle'), 2000);
+  return;
 }
 
  public formatQuery(query) {

@@ -30,7 +30,7 @@ toggleShow(string) {
 fadeOut(string) {
   if (string !== null || string !== undefined ) {
     $(document).ready(function() {
-        $(`${string}`).fadeOut(1000);
+        $(`${string}`).animate({'opacity': '0'}, 500);
     });
   }
 }
@@ -38,7 +38,7 @@ fadeOut(string) {
 fadeIn(string) {
   if (string !== null || string !== undefined ) {
   $(document).ready(function() {
-      $(`${string}`).fadeIn(1000);
+      $(`${string}`).animate({'opacity': '1'}, 1500);
   });
   }
 }

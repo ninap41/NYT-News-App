@@ -33,8 +33,10 @@
                                 <a id="hidden-link-styles" href="{{ doc.web_url }}">
                                   <h5 class="card-title">{{ doc.headline.main }}</h5>
                                   <p class="card-text">{{ doc.lead_paragraph | truncate : 200}}</p>
-                                  <a class="btn btn-secondary btn-sm" href="{{ doc.web_url }}">Continue Reading</a>
+                                  <a class="btn btn-secondary btn-sm" href="{{ doc.web_url }}">External Link</a>
                                 </a>
+                                <button class="btn btn-secondary btn-sm" (click)="showArticle(doc)" >Continue Reading</button>
+
                           </div>
                       </div>
                   <br>
@@ -42,7 +44,7 @@
             </div>
             <br>
 
-          <button class="btn btn-warning" routerLinkActive="active"[routerLink]="['']">Return Home</button>
+          <button class="btn btn-warning" routerLinkActive="active" [routerLink]="['']">Return Home</button>
       </div>
       <ng-template #spinner><img class="spinner" src ="assets/spinner.gif"> </ng-template>
 
